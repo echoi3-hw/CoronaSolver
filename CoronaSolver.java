@@ -1,3 +1,5 @@
+import java.util.*;
+import java.io.*;
 
 public class CoronaSolver {
 	//Returns a string of Ls and Ns to designate which days to spend
@@ -18,9 +20,10 @@ public class CoronaSolver {
 
 	// Li Ni
 
-	public String solve(String inputFileName) {
+	public String solve(String inputFileName) throws FileNotFoundException {
+		Scanner scan = new Scanner (new File (inputFileName));
 		
-		
+		return "";
 	}
 
 
