@@ -2,11 +2,12 @@ import java.util.*;
 import java.io.*;
 
 public class CoronaSolver {
-	
+	static int n, f;
+	static int [] LA, NY;
+	static Scanner scan;
 	// let n = total number of days
 	// let f = number of people infected from each flight
-	int n, f;
-	
+
 	//Returns a string of Ls and Ns to designate which days to spend
 
 	//in Los Angeles and New York City such that we will be exposed
@@ -24,13 +25,19 @@ public class CoronaSolver {
 	//Every subsequent line will have two numbers, separated by //spaces:
 
 	// Li Ni
-
-	public String solve(String inputFileName) throws FileNotFoundException {
-		Scanner scan = new Scanner (new File (inputFileName));
-		
+	public CoronaSolver (String inputFileName) throws FileNotFoundException {
+		scan = new Scanner (new File (inputFileName));
 		n = scan.nextInt();
 		f = scan.nextInt();
-		
+	}
+
+	public String solve() {
+		LA = new int[n];
+		NY = new int[n];
+		for (int i = 0; i < n; i++) {
+			LA[i] = scan.nextInt();
+			NY[i] = scan.nextInt();
+		}
 		
 		
 		scan.close();
