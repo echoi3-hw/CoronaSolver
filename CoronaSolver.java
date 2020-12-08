@@ -38,8 +38,15 @@ public class CoronaSolver {
 			LA[i] = scan.nextInt();
 			NY[i] = scan.nextInt();
 		}
+<<<<<<< HEAD
 		
 		
+		
+		
+=======
+
+
+>>>>>>> fa6967989d931a42630be287770bb82c13f9e6a6
 		scan.close();
 		return "";
 	}
