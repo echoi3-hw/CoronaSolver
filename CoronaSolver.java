@@ -50,7 +50,7 @@ public class CoronaSolver {
 			
 		}
 		scan.close();
-		return Math.min(LA[0], NY[0]);
+		return Math.min(newLA[0], newNY[0]);
 	}
 
 

@@ -3,7 +3,7 @@ public class CoronaTester {
 public static void main (String [] args) throws IOException
 {
 	CoronaSolver test = new CoronaSolver ("smalltest.txt");
-	test.solve();
+	System.out.println(test.solve());
 }
 	
 }
