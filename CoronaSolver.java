@@ -31,7 +31,7 @@ public class CoronaSolver {
 		flight = scan.nextInt();
 	}
 
-	public String solve() {
+	public int solve() {
 		LA = new int[days];
 		NY = new int[days];
 		for (int i = 0; i < days; i++) {
@@ -50,7 +50,7 @@ public class CoronaSolver {
 			
 		}
 		scan.close();
-		return "";
+		return Math.min(LA[0], NY[0]);
 	}
 
 
