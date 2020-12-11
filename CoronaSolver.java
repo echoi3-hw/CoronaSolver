@@ -27,18 +27,28 @@ public class CoronaSolver {
 	// Li Ni
 	public CoronaSolver (String inputFileName) throws FileNotFoundException {
 		scan = new Scanner (new File (inputFileName));
-		n = scan.nextInt();
-		f = scan.nextInt();
+		days = scan.nextInt();
+		flight = scan.nextInt();
 	}
 
 	public String solve() {
-		LA = new int[n];
-		NY = new int[n];
+		LA = new int[days];
+		NY = new int[days];
 		for (int i = 0; i < n; i++) {
 			LA[i] = scan.nextInt();
 			NY[i] = scan.nextInt();
 		}
-
+		int [] newLA = new int[days];
+		newLA[days-1] = LA[days-1];
+		int [] newNY = new int[days];
+		newNY[days-1] = NY[days-1];
+		
+		for (int i=n-2; i>=0; i--)
+		{
+			newNY[i]=Math.min(NY[i]+flight, LA[i]);
+			newLA[i] = Math.min(NY[i]+flight, LA[i]);
+			
+		}
 		scan.close();
 		return "";
 	}
