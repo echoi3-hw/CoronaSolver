@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class CoronaSolver {
-	static int n, f;
+	static int days, flight;
 	static int [] LA, NY;
 	static Scanner scan;
 	// let n = total number of days
@@ -34,7 +34,7 @@ public class CoronaSolver {
 	public String solve() {
 		LA = new int[days];
 		NY = new int[days];
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < days; i++) {
 			LA[i] = scan.nextInt();
 			NY[i] = scan.nextInt();
 		}
@@ -43,7 +43,7 @@ public class CoronaSolver {
 		int [] newNY = new int[days];
 		newNY[days-1] = NY[days-1];
 		
-		for (int i=n-2; i>=0; i--)
+		for (int i=days-2; i>=0; i--)
 		{
 			newNY[i]=Math.min(NY[i]+flight, LA[i]);
 			newLA[i] = Math.min(NY[i]+flight, LA[i]);
