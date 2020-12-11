@@ -42,15 +42,20 @@ public class CoronaSolver {
 		newLA[days-1] = LA[days-1];
 		int [] newNY = new int[days];
 		newNY[days-1] = NY[days-1];
-		
+		int totalNY=newNY[days-1];
+		int totalLA=newLA[days-1];
 		for (int i=days-2; i>=0; i--)
 		{
-			newNY[i]=Math.min(NY[i]+flight, LA[i]);
+			newNY[i]=Math.min(LA[i]+flight, NY[i]);
+			totalNY = totalNY+newNY[i];
 			newLA[i] = Math.min(NY[i]+flight, LA[i]);
+			totalLA = totalLA+newLA[i];
 			
 		}
 		scan.close();
-		return Math.min(newLA[0], newNY[0]);
+		
+		return Math.min(totalNY, totalLA);
+		
 	}
 
 
